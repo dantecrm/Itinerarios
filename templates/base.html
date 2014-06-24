@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block titulo %} {% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <h1>{% block encabezado %}{% endblock %}</h1>
+            <nav>
+                <ul>
+                    <li> <a href="/">Inicio</a> </li>
+                    <li> <a href="/usuarios">Usuarios Registrados</a> </li>
+                    <li> <a href="/itinerarios">Itinerarios de Viajes</a> </li>
+                    <li> <a href="/comisiones">Itinerario del Pastor</a> </li>
+                    <li> <a href="/incidentes">Incidentes</a> </li>
+                    <li> <a href="/comisiones">Comisiones</a> </li>
+            </nav>
+        </header>
+        <section>
+            {% block contenido %}
+            {% endblock %}
+        </section>
+    </body>
+    <footer>
+        <p>Proyecto Itinerario de Viajes de Pastores Copyleft</p>
+    </footer>
+</html>

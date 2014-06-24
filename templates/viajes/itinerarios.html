@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block titulo %}{{titulo}}{% endblock %}
+{% block encabezado %}<h1>Itinerario</h1>{% endblock encabezado %}
+{% block contenido %}
+<ul>
+    {% if itinerarios %}
+    {% for itinerario in itinerarios %}
+    <table>
+        <caption><h3>Itineario de Viaje</h3></caption>
+        <tr>
+            <th># de Itineario</th>
+            <th>Codigo de Reserva</th>
+            <th>Hora de Partida</th>
+            <th>Hora de Llegada</th> 
+            <th>Punto de Origen</th> 
+            <th>Punto de Llegada</th> 
+            <th>RUC</th> 
+            <th>Tipo de Transporte</th> 
+            <th>Comision</th> 
+            <th>Registrado por</th> 
+        </tr>
+        <tr>
+            <td>{{itinerario.id}}</td>
+            <td>{{itinerario.cod_reserva}}</td>
+            <td>{{itinerario.hora_partida}}</td>
+            <td>{{itinerario.hora_llegada}}</td>
+            <td>{{itinerario.origen}}</td>
+            <td>{{itinerario.destino}}</td>
+            <td>{{itinerario.ruc}}</td>
+            <td>{{itinerario.tipo_transporte}}</td>
+            <td>{{itinerario.comision}}</td>
+            <td>{{itinerario.usuario}}</td>
+        </tr>
+    </table>
+    {% endfor %}
+    {% else %}
+       <li>Lo sentimos, no hay itinerarios</li>
+    {% endif %}
+</ul>
+
+{% endblock %}

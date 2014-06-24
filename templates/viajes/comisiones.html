@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block titulo %}{{titulo}}{% endblock titulo %}
+{% block encabezado %}<h1>Itinerario</h1>{% endblock encabezado %}
+{% block contenido %}
+<ul>
+    {% if comisiones %}
+    {% for comision in comisiones %}
+    <table>
+        <caption><h3>Central de Comisiones</h3></caption>
+        <tr>
+            <th># de Comisión</th>
+            <th>Pastor Viajero</th>
+            <th>Motivo de Viaje</th>
+            <th>Anfitrion</th>
+            <th>Usuario Administrador</th>
+        </tr>
+        <tr>
+            <td>{{comision.id}}</td>
+            <td>{{comision.pastor_viajero}}</td>
+            <td>{{comision.motivo}}</td>
+            <td>{{comision.anfitrion_recogedor}}</td>
+            <td>{{comision.usuario}}</td>
+        </tr>
+    </table>
+    {% endfor %}
+    {% else %}
+    <li>No hay comisiones</li>
+    {% endif %}
+</ul>
+{% endblock contenido %}
+
+

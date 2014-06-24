@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block titulo %}{{titulo}}{% endblock %}
+{% block encabezado %}<h1>Itinerario</h1>{% endblock encabezado %}
+{% block contenido %}
+<ul>
+    {% if incidentes %}
+    {% for incidente in incidentes %}
+    <table>
+        <caption><h3>Incidentes de Retraso de Viaje</h3></caption>
+        <tr>
+            <th># de Incidente</th>
+            <th>Motivo de Viaje</th>
+            <th>Motivo de retraso</th>
+            <th>Usuario de Pastor</th>
+        </tr>
+        <tr>
+            <td>{{incidente.id}}</td>
+            <td>{{incidente.comision}}</td>
+            <td>{{incidente.suceso}}</td>
+            <td>{{incidente.usuario}}</td>
+        </tr>
+    </table>
+    {% endfor %}
+    {% else %}
+    <li>No hay incidentes de retraso</li>
+    {% endif %}
+</ul>
+{% endblock %}

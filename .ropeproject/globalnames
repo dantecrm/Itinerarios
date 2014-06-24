@@ -1,0 +1,10 @@
+€}q(Uviajes.forms]q(UPersonaFormqUItinerario_viajeFormqUIncidentesFormqUComisionesFormqeUitinerario.settings]q(UTEMPLATE_DIRSqUUSE_L10Nq	ULANGUAGE_CODEq
+UUSE_TZqUUSE_I18NqU	DATABASESqU	TIME_ZONEqU
+STATIC_URLqU
+MEDIA_ROOTqUROOT_URLCONFqUSTATIC_DIRSqU	MEDIA_URLqUTEMPLATE_DEBUGqUWSGI_APPLICATIONqUMIDDLEWARE_CLASSESqUDEBUGqUALLOWED_HOSTSqU
+SECRET_KEYqUINSTALLED_APPSqUBASE_DIRqeUitinerario.urls]qUurlpatternsqaUviajes.views]q(U
+comisionesqU
+incidentesq UInicioq!UUsuariosq"Uitinerariosq#eUviajes.models]q$(UCoordinadorq%UPersonaq&UItinerario_viajeq'U
+Comisionesq(UPastorq)U
+Incidentesq*U
+Secretariaq+UTIPO_TRANSPORTEq,U	Anfitrionq-eUviajes.admin]Uitinerario.forms]q.(UPersonaFormq/UItinerario_viajeFormq0UIncidentesFormq1UCoordinadorFormq2UComisionesFormq3eu.
