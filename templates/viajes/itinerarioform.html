@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block titulo %}Agregar itinerario{% endblock %}
+{% block contenido %}
+<form id='formulario' method='post' class="form-horizontal">{% csrf_token %}
+    <fieldset>
+        <legend>Itinerario Nuevo</legend>
+    </fieldset>
+    <div class="form-group">
+        <table class="table fancy-table">{{formulario}}</table>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </div>
+    </div>
+</form>      
+
+{% endblock %}
+<!--
+<form class="form-horizontal">
+  <fieldset>
+    <legend>Itinerario</legend>
+    <div class="form-group">
+        <label for="" class="col-lg-2 control-label">Codigo de Reserva</label>
+      <div class="col-lg-10">
+          <input type="text" autofocus placeholder="Codigo de Reserva" class="form-control"
+          id={{formulario.cod_reserva}}
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-lg-2 control-label">Hora de Partida</label>
+      <div class="col-lg-10">
+          <input data-format="hh:mm:ss" type="text" autofocus placeholder="Hora de Salida" class="form-control"
+          id={{formulario.hora_partida}}
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-lg-2 control-label">Hora de Llegada</label>
+      <div class="col-lg-10">
+          <input data-format="hh:mm:ss" type="text" autofocus placeholder="Hora de Llegada" class="form-control"
+          id={{formulario.hora_llegada}}
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-lg-2 control-label">Origen</label>
+      <div class="col-lg-10">
+          <input type="text" autofocus placeholder="Lugar de Origen" class="form-control"
+          id={{formulario.origen}}
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-lg-2 control-label">Destino</label>
+      <div class="col-lg-10">
+          <input type="text" autofocus placeholder="Destino" class="form-control"
+          id={{formulario.destino}}
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-lg-2 control-label">RUC</label>
+      <div class="col-lg-10">
+          <input type="number" autofocus placeholder="RUC de la UPeU" class="form-control"
+          id={{formulario.ruc}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Tipos de Transporte</label>
+      <div class="col-lg-10">
+        <div class="radio">
+          <label>
+              <input type="radio" name="optionsRadios"
+              id="{{formulario.tipo_transporte.A}}" value="option1" checked="">
+              Aéreo
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="optionsRadios"
+              id="{{formulario.tipo_transporte.T}}" value="option2">
+              Terrestre
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="optionsRadios"
+              id="{{formulario.tipo_transporte.M}}" value="option3">
+              Maritimo
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-lg-2 control-label">Fecha de Viaje</label>
+      <div class="col-lg-10">
+          <input type="text" autofocus placeholder="Fecha" class="form-control"  data-date-format="YYYY/MM/DD" id={{formulario.fecha}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Union</label>
+      <div class="col-lg-10">
+        <div class="radio">
+          <label>
+              <input type="radio" name="optionsRadios"
+              id="{{formulario.mision.N}}" value="option1" checked="">
+              Unión del Norte
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+              <input type="radio" name="optionsRadios"
+              id="{{formulario.mision.S}}" value="option2">
+              Unión del Sur
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
+<p><a href="/">Volver</a></p>        -->

@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+        <title>{% block titulo %} {% endblock %}</title>
+        <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="{{STATIC_URL}}css/jumbotron.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>{% block encabezado %}{% endblock %}</h1>
+            <nav>
+                <ul>
+                    <li> <a href="/">Inicio</a> </li>
+                    <li> <a href="/usuarios">Usuarios Registrados</a> </li>
+                    <li> <a href="/itinerarios">Itinerarios de Viajes</a> </li>
+                    <li> <a href="/incidentes">Incidentes</a> </li>
+                    <li> <a href="/comisiones">Comisiones</a> </li>
+                    <li> <a href="/admin">Administrador</a> </li>
+            </nav>
+        </header>
+        <section>
+            {% block contenido %}
+            {% endblock %}
+        </section>
+        <footer>
+            <p>Proyecto Itinerario de Viajes de Pastores Copyleft</p>
+        </footer>
+    </body>
+</html>

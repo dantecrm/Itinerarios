@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block titulo %}Nueva Comision{% endblock titulo %}
+{% block contenido %}
+<form id='formulario' method='post' class="form-horizontal">{% csrf_token %}
+    <fieldset>
+        <legend>Comision Nueva</legend>
+    </fieldset>
+    <div class="form-group">
+        <table class="table table-condensed">{{formulario}}</table>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </div>
+    </div>
+</form>
+<div class="form-group">
+    <div class="col-md-12"><a href="/">
+            <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Volver</button></a>
+    </div>	
+</div>
+{% endblock contenido %}

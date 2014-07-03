@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block titulo %}Registro de usuario{% endblock %}
+{% block contenido %}
+<form id='formulario' method="POST" role="form-horizontal">{% csrf_token %}
+    <fieldset>
+        <legend>Usuario Nuevo</legend>
+    </fieldset>
+    <div class="form-group">
+        <table class="table table-striped table-hover">{{formulario}}</table>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="form-group"><a href="/"><button class="btn btn-warning">Volver</button></a></div>
+{% endblock %}
+    </div>
+</form>

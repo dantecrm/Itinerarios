@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.forms import ModelForm
 from django import forms
 from viajes.models import Persona, Coordinador, Comisiones, Incidentes, Itinerario_viaje
@@ -19,4 +20,9 @@ class IncidentesForm(ModelForm):
 class Itinerario_viajeForm(ModelForm):
     class Meta:
         model = Itinerario_viaje
+
+class DateForm(forms.Form):
+    anio = forms.IntegerField(label='Año:')
+    mes = forms.IntegerField(label='Mes:')
+    dia = forms.IntegerField(label='Día:')
 

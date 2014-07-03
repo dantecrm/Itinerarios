@@ -1,28 +1,201 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block titulo %} {% endblock %}</title>
-    </head>
-    <body>
-        <header>
-            <h1>{% block encabezado %}{% endblock %}</h1>
-            <nav>
-                <ul>
-                    <li> <a href="/">Inicio</a> </li>
-                    <li> <a href="/usuarios">Usuarios Registrados</a> </li>
-                    <li> <a href="/itinerarios">Itinerarios de Viajes</a> </li>
-                    <li> <a href="/comisiones">Itinerario del Pastor</a> </li>
-                    <li> <a href="/incidentes">Incidentes</a> </li>
-                    <li> <a href="/comisiones">Comisiones</a> </li>
-            </nav>
-        </header>
-        <section>
-            {% block contenido %}
-            {% endblock %}
-        </section>
-    </body>
-    <footer>
-        <p>Proyecto Itinerario de Viajes de Pastores Copyleft</p>
-    </footer>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+    <title>{% block titulo %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{STATIC_URL}}images/gt_favicon.png">
+	
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/styles.css">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/font-awesome.min.css">
+
+	<!-- Custom styles for our template -->
+    <link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap-theme.css" media="screen" >
+    <link rel="stylesheet" href="{{STATIC_URL}}css/main.css">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="home">
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="/"><img src="{{STATIC_URL}}images/logo.png" alt="Progressus HTML5 template"></a>
+			</div>
+            {% include "menu.html" %}
+		</div>
+	</div> 
+	<!-- /.navbar -->
+
+	<!-- Header -->
+	<header id="head">
+		<div class="container">
+			<div class="row">
+                {% block contenidoprincipal %} 
+				<h1 class="lead">ITINERARIOS DE VIAJES PARA PASTORES</h1>
+				<p class="tagline">Un Sistema exclusivo para todos ellos <a
+                        href="http://www.gettemplate.com/?utm_source=progressus&amp;utm_medium=template&amp;utm_campaign=progressus">Pastores
+                Viajando</a></p>
+                {% endblock %}
+            </div>
+		</div>
+	</header>
+	<!-- /Header -->
+
+	<!-- Intro -->
+	<div class="container text-center">
+		<br> <br>
+		<h2 class="thin">Un Itinerario hecho para pastores</h2>
+		<p class="text-muted">
+			La nueva tendencia el la cual el pastor disfrutara de su viaje por las facilidades de su uso<br> 
+			Este lanzamiento será muy pronto
+		</p>
+	</div>
+	<!-- /Intro-->
+		
+	<!-- Highlights - jumbotron -->
+	<div class="jumbotron top-space">
+		<div class="container">
+			
+			<h3 class="text-center thin">Razones para Usarlo</h3>
+			
+			<div class="row">
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="glyphicon
+                                glyphicon-th-large btn"></i>Visulizacion Inmediata</h4></div>
+					<div class="h-body text-center">
+						<p>Usted puede estar en cualquier lugar, no importa donde esté, solamente necesita estar conectado y logeado a internet, podra visualizar, todos los datos sobre su viaje.</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="glyphicon glyphicon-ok"></i>Libre pirateria</h4></div>
+					<div class="h-body text-center">
+						<p>Solo el Administrador y el Coordinador tienen
+                            permisos para agregar itinerarios.</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="glyphicon
+                                glyphicon-phone"></i>Facil aviso</h4></div>
+					<div class="h-body text-center">
+						<p>Usted no tiene que preocuparse si habrá itinerarios para usted, de eso no se preocupe, le llegará a su telefono celular todos los datos sobre su viaje </p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="glyphicon
+                                glyphicon-ban-circle"></i>Cero Gastos</h4></div>
+					<div class="h-body text-center">
+						<p>NO tiene que preocuparse por el gasto la universidad pagará por tí asi que diviertase viajando y evangelizando.</p>
+					</div>
+				</div>
+			</div> <!-- /row  -->
+		
+		</div>
+	</div>
+	<!-- /Highlights -->
+
+	<!-- container -->
+    <div class="container">
+        {% block contenido %}
+        {% endblock %}
+		</div> <!-- /row -->
+
+		<div class="jumbotron top-space">
+			<h4>Si necesita ayuda, apersonarse con Bienestar Universitario.</h4>
+     		<p class="text-right"><a class="btn btn-primary btn-large">Ayuda »</a></p>
+  		</div>
+
+</div>	<!-- /container -->
+	
+	<!-- Social links. @TODO: replace by link/instructions in template -->
+	<section id="social">
+		<div class="container">
+			<div class="wrapper clearfix">
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style">
+				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+				<a class="addthis_button_tweet"></a>
+				<a class="addthis_button_linkedin_counter"></a>
+				<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+				</div>
+				<!-- AddThis Button END -->
+			</div>
+		</div>
+	</section>
+	<!-- /social links -->
+
+
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p>+952 215761<br>
+								<a
+                                    href="https://github.com/danterrc">dangenius.14@hotmail.com</a><br>
+								<br>
+								Luis Banchero Roossi N° 172
+							</p>	
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="simplenav">
+								<a href="/">Home</a> | 
+								<a href="/">About</a> |
+								<b><a href="/ingresar">Sign up</a></b>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2014, Dante. Designed by <a href="" rel="designer">dantecazanova</a> 
+							</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+	</footer>	
+		
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="{{STATIC_URL}}js/headroom.min.js"></script>
+    <script src="{{STATIC_URL}}js/jQuery.headroom.min.js"></script>
+    <script src="{{STATIC_URL}}js/template.js"></script>
+</body>
 </html>

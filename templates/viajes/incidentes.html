@@ -1,19 +1,27 @@
 {% extends "base.html" %}
 {% block titulo %}{{titulo}}{% endblock %}
-{% block encabezado %}<h1>Itinerario</h1>{% endblock encabezado %}
 {% block contenido %}
 <ul>
     {% if incidentes %}
     {% for incidente in incidentes %}
-    <table>
+    <table class="table table-striped table-hover">
         <caption><h3>Incidentes de Retraso de Viaje</h3></caption>
-        <tr>
+        <tr class="success">
             <th># de Incidente</th>
             <th>Motivo de Viaje</th>
             <th>Motivo de retraso</th>
             <th>Usuario de Pastor</th>
+            <th><a href="{% url 'viajes.views.editar_incidente' incidente.id %}"
+                    ><button type="button" class="btn
+                                btn-info"><span class="glyphicon
+                                    glyphicon-text-height"></span> Editar</button></a>
+            </th>
+            <th> 
+                <a href="{% url 'viajes.views.borrar_incidente' incidente.id %}">
+                    <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Borrar</button></a>
+            </th>
         </tr>
-        <tr>
+        <tr class="warning">
             <td>{{incidente.id}}</td>
             <td>{{incidente.comision}}</td>
             <td>{{incidente.suceso}}</td>
@@ -24,5 +32,16 @@
     {% else %}
     <li>No hay incidentes de retraso</li>
     {% endif %}
-</ul>
+    <div class="modal-footer">
+        <div class="col-md-12"><a href="/incidente/nuevo">
+        <button type="button" class="btn btn-success"><span class="glyphicon
+                glyphicon-text-height"></span> Nuevo Incidente</button></a>
+		</div>	
+    </div>
+    <div class="modal-footer">
+        <div class="col-md-12"><a href="/">
+        <button type="button" class="btn btn-info"><span class="glyphicon
+                glyphicon-arrow-left"></span> Volver</button></a>
+		</div>	
+    </div>
 {% endblock %}

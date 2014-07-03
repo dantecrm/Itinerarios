@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'viajes',
 )
 
@@ -91,10 +92,16 @@ STATIC_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL = 'http://127.0.0.1:8000/media/'
+MEDIA_URL = '/media/'
 
 # Templates dirs, contiene los html de las aplicaciones
 
 TEMPLATE_DIRS = (
 os.path.join(BASE_DIR, 'templates'),
 )
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = 'assets'

@@ -67,6 +67,11 @@ TIPO_TRANSPORTE = (
     ('M', 'Maritimo'),
 )
 
+UNION = (
+    ('S', 'Unión del Sur'),
+    ('N', 'Unión del Norte'),
+)
+
 class Itinerario_viaje(models.Model):
     cod_reserva = models.CharField(max_length=6, unique=True,
                                    help_text="Por favor escriba con mayúsculas")
@@ -77,5 +82,10 @@ class Itinerario_viaje(models.Model):
     ruc = models.IntegerField(unique=True)
     tipo_transporte = models.CharField(max_length=1,
                                        choices=TIPO_TRANSPORTE, default='A')
+    fecha = models.DateField()
+    mision = models.CharField(max_length=1, choices=UNION, default='N')
     comision = models.ForeignKey(Comisiones)
     usuario = models.ForeignKey(User)
+
+    def __unicode__(self):
+        return "De %s a %s" %(self.origen, self.destino)

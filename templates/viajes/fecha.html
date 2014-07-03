@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block titulo %}fecha{% endblock %}
+{% block contenido %}
+<form id=""  method="post">{% csrf_token %}
+     {{mes}}
+     <p><input type='submit' value='Ver Itinerario'/></p>
+</form>
+{% endblock contenido %}
+

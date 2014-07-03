@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block titulo %}Incidente ocurrido{% endblock titulo %}
+{% block contenido %}
+<form id='formulario'  method="post">{% csrf_token %}
+     {{formulario.as_p}}
+     <p><input type='submit' value='Registrar'/></p>
+</form>
+<div class="form-group">
+    <div class="col-lg-10 col-lg-offset-2"><a href="/">
+            <button type="submit" class="btn btn-primary">Retornar</button></a>
+    </div>
+</div>
+{% endblock contenido %}

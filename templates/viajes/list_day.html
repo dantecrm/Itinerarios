@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block titulo %}Lista Itinerario por Dia{% endblock %}
+{% block contenido %}
+<ul>
+    {% for lista in listas %}
+    <li>{{lista.cod_reserva}}</li>
+    <li>{{lista.hora_partida}}</li>
+    <li>{{lista.hora_llegada}}</li>
+    <li>{{lista.dia}}</li>
+    <li>{{lista.mision}}</li>
+    <li>{{lista.comision}}</li>
+    {% endfor %}
+    <p><a href="/">Volver</a></p>
+</ul>
+{% endblock contenido %}

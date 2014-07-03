@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block titulo %}{{titulo}}{% endblock %}
-{% block encabezado %}<h1>Usuarios Registrados</h1>{% endblock encabezado %}
 {% block contenido %}
     <ul>
         {% for usuario in usuarios %}
         <li> {{usuario.username}} <em>{{usuario.email}}</em></li>
         {% endfor %}
     </ul>
+    <div class="form-group"><a href="/usuario/nuevo"><button type="submit" class="btn btn-success">Agregar Nuevo Usuario</button></a>
+    </div>
+    <div class="form-group"><a href="/"><button type="submit" class="btn btn-warning">Retornar</button></a>
+    </div>
 {% endblock %}
 
